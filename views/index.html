@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Dessa Training College | Professional Accounting & IT Education
+    </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dessa: {
+                primary: "#1e3a5f",
+                secondary: "#c9a227",
+                accent: "#e8f4f8",
+                dark: "#0f172a",
+                light: "#f8fafc",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center space-x-3">
+            <img
+              src="/images/logo.png"
+              alt="Dessa Logo"
+              class="h-16 mx-auto mb-4"
+            />
+          </a>
+          <!-- <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-dessa-primary rounded-lg flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-xl">D</span>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-dessa-primary leading-tight">
+                DESSA
+              </h1>
+              <p class="text-xs text-gray-500 tracking-wider">
+                TRAINING COLLEGE
+              </p>
+            </div>
+          </div> -->
+          <!-- 
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+
+            <a
+              href="#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="#why-dessa"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Why Dessa</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div> -->
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/portal/login"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Student Portal</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#home" class="block py-2 text-gray-700">Home</a>
+          <a href="#programs" class="block py-2 text-gray-700">Programs</a>
+          <a href="#why-dessa" class="block py-2 text-gray-700">Why Dessa</a>
+          <a href="#contact" class="block py-2 text-gray-700">Contact</a>
+          <a href="#apply" class="block py-2 text-dessa-primary font-semibold"
+            >Apply Now</a
+          >
+        </div>
+      </div> -->
+
+      <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="/" class="block py-2 text-gray-700">Home</a>
+          <a href="/about" class="block py-2 text-gray-700">About Us</a>
+          <a href="/#programs" class="block py-2 text-gray-700">Programs</a>
+          <a href="/#contact" class="block py-2 text-gray-700">Contact</a>
+          <a href="/portal/login" class="block py-2 text-gray-700"
+            >Student Portal</a
+          >
+          <a
+            href="/admissions"
+            class="block py-2 text-dessa-primary font-semibold"
+            >Apply Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center bg-gradient-to-br from-dessa-primary via-dessa-primary to-slate-800 overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-20 left-20 w-72 h-72 bg-dessa-secondary rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <div
+              class="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-dessa-secondary text-sm font-medium mb-6 backdrop-blur-sm border border-white/20"
+            >
+              <i class="fas fa-graduation-cap mr-2"></i>
+              Now Enrolling for 2026 Intake
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            >
+              Build Your Career in
+              <span class="text-dessa-secondary">Accounting</span> &
+              <span class="text-dessa-secondary">Technology</span>
+            </h1>
+
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl">
+              Join Kenya's leading training college for CPA, CAMS, ATD, and
+              professional computer packages. Learn online or on-campus with
+              expert instructors.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#apply"
+                class="bg-dessa-secondary text-dessa-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-2xl text-center"
+              >
+                Apply Now <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a
+                href="#programs"
+                class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 text-center"
+              >
+                Explore Programs
+              </a>
+            </div>
+
+            <div
+              class="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/10"
+            >
+              <div>
+                <div class="text-3xl font-bold text-dessa-secondary">2+</div>
+                <div class="text-sm text-gray-400">Years Experience</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-dessa-secondary">100+</div>
+                <div class="text-sm text-gray-400">Graduates</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-dessa-secondary">95%</div>
+                <div class="text-sm text-gray-400">Pass Rate</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden lg:block relative">
+            <div
+              class="relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10"
+            >
+              <div class="flex items-center space-x-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">KASNEB Registered</p>
+                  <p class="text-gray-400 text-sm">
+                    Approved Examination Center
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-laptop text-white"></i>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Hybrid Learning</p>
+                  <p class="text-gray-400 text-sm">Online & Physical Classes</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-dessa-secondary rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-users text-dessa-primary"></i>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Expert Faculty</p>
+                  <p class="text-gray-400 text-sm">Industry Professionals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Portal CTA -->
+    <section class="py-12 bg-dessa-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-dessa-primary mb-4">
+          Already Applied?
+        </h2>
+        <p class="text-dessa-primary mb-6">
+          Check your application status or access your student portal
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/portal/login"
+            class="bg-dessa-primary text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-dessa-primary transition-all duration-300"
+          >
+            <i class="fas fa-sign-in-alt mr-2"></i> Student Login
+          </a>
+          <a
+            href="/admissions"
+            class="border-2 border-dessa-primary text-dessa-primary px-8 py-3 rounded-full font-bold hover:bg-dessa-primary hover:text-white transition-all duration-300"
+          >
+            <i class="fas fa-file-alt mr-2"></i> Check Application
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS SECTION -->
+    <section id="programs" class="py-20 bg-dessa-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Our Programs</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            Professional Courses That Transform Careers
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Choose from our industry-recognized programs designed to prepare you
+            for the modern workforce.
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          id="programs-grid"
+        >
+          <!-- Programs loaded dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY DESSA SECTION -->
+    <section id="why-dessa" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+              >Why Choose Us</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-6"
+            >
+              We Don't Just Teach — We Build Careers
+            </h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              At Dessa Training College, we combine rigorous academic standards
+              with practical industry exposure. Our graduates are sought after
+              by top employers across East Africa.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-dessa-accent rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i
+                    class="fas fa-chalkboard-teacher text-dessa-primary text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dessa-primary mb-1">
+                    Expert Instructors
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Learn from CPAs, certified specialists, and industry
+                    veterans with 10+ years experience.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-dessa-accent rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-dessa-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dessa-primary mb-1">
+                    Flexible Scheduling
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Morning, evening, and Online classes. Online options for
+                    both working professionals and Non working professionals.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-dessa-accent rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-certificate text-dessa-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dessa-primary mb-1">
+                    Recognized Certifications
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    KASNEB registered center. Globally recognized
+                    qualifications.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-dessa-accent rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-briefcase text-dessa-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dessa-primary mb-1">
+                    Career Support
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Job placement assistance, CV workshops, and interview
+                    preparation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-dessa-secondary/20 rounded-3xl transform rotate-3"
+            ></div>
+            <div class="relative bg-dessa-primary rounded-2xl p-8 text-white">
+              <div class="grid grid-cols-2 gap-6">
+                <div
+                  class="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm"
+                >
+                  <div class="text-3xl font-bold text-dessa-secondary mb-1">
+                    2+
+                  </div>
+                  <div class="text-sm text-gray-300">Years of Excellence</div>
+                </div>
+                <div
+                  class="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm"
+                >
+                  <div class="text-3xl font-bold text-dessa-secondary mb-1">
+                    30+
+                  </div>
+                  <div class="text-sm text-gray-300">Expert Faculty</div>
+                </div>
+                <div
+                  class="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm"
+                >
+                  <div class="text-3xl font-bold text-dessa-secondary mb-1">
+                    2K+
+                  </div>
+                  <div class="text-sm text-gray-300">Alumni Network</div>
+                </div>
+                <div
+                  class="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm"
+                >
+                  <div class="text-3xl font-bold text-dessa-secondary mb-1">
+                    98%
+                  </div>
+                  <div class="text-sm text-gray-300">Student Satisfaction</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 bg-dessa-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Success Stories</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            What Our Graduates Say
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-dessa-primary rounded-full flex items-center justify-center text-white font-bold"
+              >
+                JM
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-dessa-primary">James Mwangi</h4>
+                <p class="text-sm text-gray-500">CPA Graduate, 2024</p>
+              </div>
+            </div>
+            <div class="flex text-dessa-secondary mb-3">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 text-sm italic">
+              "The CPA program at Dessa gave me the foundation I needed. I
+              passed all my KASNEB exams on the first attempt and now work at a
+              Big Four firm."
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-dessa-secondary rounded-full flex items-center justify-center text-dessa-primary font-bold"
+              >
+                AK
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-dessa-primary">Amina Khalid</h4>
+                <p class="text-sm text-gray-500">CAMS Graduate, 2025</p>
+              </div>
+            </div>
+            <div class="flex text-dessa-secondary mb-3">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 text-sm italic">
+              "The CAMS certification opened doors I never imagined. The online
+              classes were perfect for my schedule as a working mom."
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                PO
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-dessa-primary">Peter Ochieng</h4>
+                <p class="text-sm text-gray-500">Computer Packages, 2025</p>
+              </div>
+            </div>
+            <div class="flex text-dessa-secondary mb-3">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="text-gray-600 text-sm italic">
+              "Started with zero computer knowledge. Within 3 months, I was
+              proficient in Excel, creating databases, and even basic
+              programming."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY / INQUIRY SECTION -->
+    <section
+      id="apply"
+      class="py-20 bg-gradient-to-br from-dessa-primary to-slate-800 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-dessa-secondary/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+              >Start Your Journey</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">
+              Ready to Transform Your Career?
+            </h2>
+            <p class="text-gray-300 mb-8 leading-relaxed">
+              Fill in your details and our admissions team will contact you
+              within 24 hours with program information, fee structures, and next
+              steps.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3 text-gray-300">
+                <i class="fas fa-check-circle text-dessa-secondary"></i>
+                <span>No obligation — free consultation</span>
+              </div>
+              <div class="flex items-center space-x-3 text-gray-300">
+                <i class="fas fa-check-circle text-dessa-secondary"></i>
+                <span>Flexible payment plans available</span>
+              </div>
+              <div class="flex items-center space-x-3 text-gray-300">
+                <i class="fas fa-check-circle text-dessa-secondary"></i>
+                <span>Scholarship opportunities for deserving students</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-2xl">
+            <h3 class="text-2xl font-bold text-dessa-primary mb-6">
+              Request Information
+            </h3>
+
+            <form id="inquiry-form" class="space-y-5">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  name="full_name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email *</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Phone *</label
+                  >
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                    placeholder="+254 7XX XXX XXX"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Program Interest</label
+                >
+                <select
+                  name="program_interest"
+                  id="program-select"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                >
+                  <option value="">Select a program...</option>
+                  <option value="CPA">Certified Public Accountant (CPA)</option>
+                  <option value="CAMS">
+                    Certified Anti-Money Laundering Specialist (CAMS)
+                  </option>
+                  <option value="ATD">
+                    Accounting Technicians Diploma (ATD)
+                  </option>
+                  <option value="COMP-PKG">Computer Packages</option>
+                  <option value="Not Sure">Not Sure — Need Guidance</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message (Optional)</label
+                >
+                <textarea
+                  name="message"
+                  rows="3"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none resize-none"
+                  placeholder="Tell us about your goals or any questions..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-dessa-primary text-white py-4 rounded-lg font-bold text-lg hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg"
+              >
+                <span id="btn-text">Submit Application</span>
+                <span id="btn-loading" class="hidden">
+                  <i class="fas fa-spinner fa-spin mr-2"></i>Processing...
+                </span>
+              </button>
+
+              <div
+                id="form-message"
+                class="hidden rounded-lg p-4 text-center text-sm"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Get In Touch</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            Visit Our Campus
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-dessa-light rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-dessa-primary rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-dessa-primary mb-2">Campus Address</h4>
+            <p class="text-gray-600 text-sm">
+              Ground Floor suite No. 4, Opp. Mathai Supermarket<br />Murang'a,
+              Kenya
+            </p>
+          </div>
+
+          <div class="bg-dessa-light rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-dessa-primary rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-phone text-white text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-dessa-primary mb-2">Phone Numbers</h4>
+            <p class="text-gray-600 text-sm">
+              Admissions: +254 768 201 415<br />General: +254 715 475 134
+            </p>
+          </div>
+
+          <div class="bg-dessa-light rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-dessa-primary rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-envelope text-white text-2xl"></i>
+            </div>
+            <h4 class="font-bold text-dessa-primary mb-2">Email Us</h4>
+            <p class="text-gray-600 text-sm">
+              admissions@dessacollege.ac.ke<br />dessatrainingcollege@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dessa-dark text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-dessa-secondary rounded-lg flex items-center justify-center"
+              >
+                <span class="text-dessa-primary font-bold text-lg">D</span>
+              </div>
+              <h3 class="text-lg font-bold">DESSA COLLEGE</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Empowering future accountants and IT professionals through quality
+              education since 2024.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Programs</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Admissions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Student Portal</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Programs</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white transition">CPA</a></li>
+              <li><a href="#" class="hover:text-white transition">CAMS</a></li>
+              <li><a href="#" class="hover:text-white transition">ATD</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Computer Packages</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Contact Us</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-map-marker-alt text-dessa-secondary"></i>
+                <span>Ground Floor suite No. 4, Opp. Mathai Supermarket</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-dessa-secondary"></i>
+                <span>+254 768 201 415</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-dessa-secondary"></i>
+                <span>dessatrainingcollege@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-sm text-gray-500">
+            2026 Dessa Training College. All rights reserved.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      // Fetch and display programs dynamically
+      async function loadPrograms() {
+        try {
+          const response = await fetch("/api/programs");
+          const programs = await response.json();
+          const grid = document.getElementById("programs-grid");
+
+          grid.innerHTML = programs
+            .map(
+              (program) => `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group slide-up">
+                        <div class="h-48 bg-gradient-to-br from-dessa-primary to-slate-700 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                            <i class="fas ${program.category === "accounting" ? "fa-calculator" : "fa-laptop-code"} text-6xl text-white/30 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full">
+                                    ${program.mode.charAt(0).toUpperCase() + program.mode.slice(1)}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold text-dessa-secondary bg-dessa-secondary/10 px-3 py-1 rounded-full">
+                                    ${program.category.toUpperCase()}
+                                </span>
+                                <span class="text-sm text-gray-500">${program.duration_months} months</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dessa-primary mb-2">${program.name}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">${program.description}</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <div>
+                                    <span class="text-xs text-gray-500">Tuition</span>
+                                    <p class="text-lg font-bold text-dessa-primary">KES ${program.fee_kes.toLocaleString()}</p>
+                                </div>
+                                <button onclick="window.location.href='/program?code=${program.code}'" 
+                                        class="bg-dessa-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-dessa-secondary hover:text-dessa-primary transition">
+                                    Enroll
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `,
+            )
+            .join("");
+        } catch (error) {
+          console.error("Error loading programs:", error);
+          document.getElementById("programs-grid").innerHTML =
+            '<p class="text-center text-gray-500 col-span-4">Unable to load programs. Please refresh.</p>';
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadPrograms);
+
+      // Form submission
+      document
+        .getElementById("inquiry-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const btn = document.getElementById("submit-btn");
+          const btnText = document.getElementById("btn-text");
+          const btnLoading = document.getElementById("btn-loading");
+          const messageDiv = document.getElementById("form-message");
+
+          btnText.classList.add("hidden");
+          btnLoading.classList.remove("hidden");
+          btn.disabled = true;
+
+          const formData = {
+            full_name: this.full_name.value,
+            email: this.email.value,
+            phone: this.phone.value,
+            program_interest: this.program_interest.value,
+            message: this.message.value,
+          };
+
+          try {
+            const response = await fetch("/api/inquiry", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            messageDiv.classList.remove("hidden");
+            if (response.ok) {
+              messageDiv.className =
+                "rounded-lg p-4 text-center text-sm bg-green-100 text-green-800";
+              messageDiv.textContent = result.message;
+              this.reset();
+            } else {
+              messageDiv.className =
+                "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
+              messageDiv.textContent =
+                result.error || "Something went wrong. Please try again.";
+            }
+          } catch (error) {
+            messageDiv.classList.remove("hidden");
+            messageDiv.className =
+              "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
+            messageDiv.textContent =
+              "Network error. Please check your connection and try again.";
+          } finally {
+            btnText.classList.remove("hidden");
+            btnLoading.classList.add("hidden");
+            btn.disabled = false;
+          }
+        });
+    </script>
+  </body>
+</html>

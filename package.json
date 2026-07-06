@@ -1,0 +1,26 @@
+{
+  "name": "dessa-college",
+  "version": "1.0.0",
+  "description": "Dessa Training College Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "nodemailer": "^9.0.3",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "express-fileupload": "^1.5.0",
+    "nodemon": "^3.1.14",
+    "nodemailer": "^6.9.14"
+  }
+}

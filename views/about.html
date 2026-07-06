@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Dessa Training College</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dessa: {
+                primary: "#1e3a5f",
+                secondary: "#d4a017",
+                accent: "#e8f4f8",
+                dark: "#0f172a",
+                light: "#f8fafc",
+                gold: "#d4a017",
+                navy: "#1e3a5f",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center space-x-3">
+            <img
+              src="/images/logo.png"
+              alt="Dessa Logo"
+              class="h-16 mx-auto mb-4"
+            />
+          </a>
+
+          <!-- <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a href="/about" class="text-dessa-primary font-semibold transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div> -->
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/portal/login"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Student Portal</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="/" class="block py-2 text-gray-700">Home</a>
+          <a href="/about" class="block py-2 text-gray-700">About Us</a>
+          <a href="/#programs" class="block py-2 text-gray-700">Programs</a>
+          <a href="/#contact" class="block py-2 text-gray-700">Contact</a>
+          <a href="/portal/login" class="block py-2 text-gray-700"
+            >Student Portal</a
+          >
+          <a
+            href="/admissions"
+            class="block py-2 text-dessa-primary font-semibold"
+            >Apply Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative pt-40 pb-20 bg-gradient-to-br from-dessa-primary via-dessa-primary to-slate-800 overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-20 right-20 w-72 h-72 bg-dessa-secondary rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-dessa-secondary text-sm font-medium mb-6 backdrop-blur-sm border border-white/20"
+        >
+          <i class="fas fa-info-circle mr-2"></i>
+          Learn More About Us
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          About Dessa Training College
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Building careers in Accounting and Technology since 2024
+        </p>
+      </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+              >Our Story</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-6"
+            >
+              The Path to Knowledge Starts Here
+            </h2>
+
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Founded in 2024, Dessa Training College began with a simple
+                mission: to provide quality, accessible education in accounting
+                and technology to students across Kenya. What started as a small
+                computer training center has grown into one of the region's most
+                respected institutions for professional certifications.
+              </p>
+              <p>
+                Our name "Dessa" embodies our commitment to
+                <strong
+                  >Determination, Excellence, Success, Skills, and
+                  Achievement</strong
+                >
+                — the five pillars that guide everything we do.
+              </p>
+              <p>
+                Today, we serve over 1,000 students annually, offering both
+                online and physical classes that fit the schedules of working
+                professionals, recent graduates, and career changers alike.
+              </p>
+            </div>
+
+            <div class="mt-8 flex items-center space-x-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-dessa-primary">2+</div>
+                <div class="text-sm text-gray-500">Years</div>
+              </div>
+              <div class="w-px h-12 bg-gray-200"></div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-dessa-primary">1,000+</div>
+                <div class="text-sm text-gray-500">Students</div>
+              </div>
+              <div class="w-px h-12 bg-gray-200"></div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-dessa-primary">95%</div>
+                <div class="text-sm text-gray-500">Pass Rate</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-dessa-secondary/20 rounded-3xl transform -rotate-2"
+            ></div>
+            <div class="relative bg-dessa-primary rounded-2xl p-10 text-white">
+              <div class="text-center mb-8">
+                <img
+                  src="/images/logo.png"
+                  alt="Dessa Logo"
+                  class="h-24 mx-auto mb-4"
+                />
+                <h3 class="text-2xl font-bold">Our Mission</h3>
+              </div>
+              <p
+                class="text-gray-300 text-center italic text-lg leading-relaxed"
+              >
+                "To empower individuals with professional skills and knowledge
+                that transform careers, build communities, and drive economic
+                growth through quality education."
+              </p>
+
+              <div class="mt-8 pt-8 border-t border-white/20">
+                <h3 class="text-2xl font-bold text-center mb-4">Our Vision</h3>
+                <p
+                  class="text-gray-300 text-center italic text-lg leading-relaxed"
+                >
+                  "To be East Africa's leading training institution for
+                  accounting and technology professionals, recognized for
+                  excellence, innovation, and student success."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US - EXPANDED -->
+    <section class="py-20 bg-dessa-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Why Dessa</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            What Sets Us Apart
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We go beyond textbooks to deliver real-world skills and career-ready
+            graduates.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Expert Instructors
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Our faculty includes certified CPAs, CAMS specialists, and IT
+              professionals with 10+ years of industry experience.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-secondary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-clock text-dessa-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Flexible Learning
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Morning, evening, and weekend classes. Online and physical options
+              to fit your schedule.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-certificate text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Recognized Certifications
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              KASNEB registered examination center. Globally recognized CPA,
+              CAMS, and ATD qualifications.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-secondary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-laptop-code text-dessa-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Modern Facilities
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              State-of-the-art computer labs, high-speed internet, and
+              comfortable learning environments.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-primary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-briefcase text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Career Support
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Job placement assistance, CV writing workshops, interview
+              preparation, and alumni networking.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 bg-dessa-secondary rounded-xl flex items-center justify-center mb-6"
+            >
+              <i
+                class="fas fa-hand-holding-usd text-dessa-primary text-2xl"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Affordable Fees
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Competitive pricing with flexible installment plans and
+              scholarship opportunities for deserving students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCREDITATION & PARTNERSHIPS -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Trust & Recognition</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            Accreditation & Partnerships
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-dessa-light rounded-2xl p-8 text-center border-2 border-dessa-primary/10 hover:border-dessa-secondary transition-all duration-300"
+          >
+            <div
+              class="w-20 h-20 bg-dessa-primary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-award text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              KASNEB Registered
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Approved examination center for CPA, CAMS, and ATD certifications.
+              Our students sit for official KASNEB exams.
+            </p>
+          </div>
+
+          <div
+            class="bg-dessa-light rounded-2xl p-8 text-center border-2 border-dessa-primary/10 hover:border-dessa-secondary transition-all duration-300"
+          >
+            <div
+              class="w-20 h-20 bg-dessa-secondary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-globe text-dessa-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              ACAMS Affiliated
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Preparation center for Certified Anti-Money Laundering Specialist
+              (CAMS) global certification.
+            </p>
+          </div>
+
+          <div
+            class="bg-dessa-light rounded-2xl p-8 text-center border-2 border-dessa-primary/10 hover:border-dessa-secondary transition-all duration-300"
+          >
+            <div
+              class="w-20 h-20 bg-dessa-primary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-handshake text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dessa-primary mb-3">
+              Industry Partners
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Collaborations with leading accounting firms, banks, and tech
+              companies for internships and placements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP / TEAM -->
+    <section class="py-20 bg-dessa-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="text-dessa-secondary font-semibold text-sm tracking-wider uppercase"
+            >Our Team</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-dessa-primary mt-2 mb-4"
+          >
+            Meet Our Leadership
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Dedicated professionals committed to your success.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Director -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg text-center"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="/images/director.jpg"
+                alt="[Director Name]"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dessa-primary">
+                [Director Name]
+              </h3>
+              <p class="text-dessa-secondary font-medium text-sm mb-3">
+                Founder & Director
+              </p>
+              <p class="text-gray-600 text-sm">
+                Visionary leader with 20+ years in education and professional
+                training.
+              </p>
+            </div>
+          </div>
+
+          <!-- Academic Head -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg text-center"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="/images/academic-head.jpg"
+                alt="[Academic Head Name]"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dessa-primary">
+                [Academic Head Name]
+              </h3>
+              <p class="text-dessa-secondary font-medium text-sm mb-3">
+                Head of Academics
+              </p>
+              <p class="text-gray-600 text-sm">
+                Certified CPA with expertise in curriculum development and
+                student success.
+              </p>
+            </div>
+          </div>
+
+          <!-- IT Head -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg text-center"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="/images/it-head.png"
+                alt="Brandon Binaisa"
+                class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dessa-primary">
+                Brandon Binaisa
+              </h3>
+              <p class="text-dessa-secondary font-medium text-sm mb-3">
+                Head of IT & Computer Packages
+              </p>
+              <p class="text-gray-600 text-sm">
+                Technology expert ensuring our digital infrastructure supports
+                modern learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section
+      class="py-20 bg-gradient-to-br from-dessa-primary to-slate-800 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-dessa-secondary/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Start Your Journey?
+        </h2>
+        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          Join thousands of successful graduates who started their careers at
+          Dessa Training College.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/#apply"
+            class="bg-dessa-secondary text-dessa-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-lg"
+          >
+            Apply Now <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a
+            href="/#programs"
+            class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
+          >
+            View Programs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dessa-dark text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <img
+                src="/images/logo.png"
+                alt="Dessa Training College"
+                class="h-12 w-auto"
+              />
+              <h3 class="text-lg font-bold">DESSA COLLEGE</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Empowering future accountants and IT professionals through quality
+              education since 2024.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="/" class="hover:text-white transition">Home</a></li>
+              <li>
+                <a href="/about" class="hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="/#programs" class="hover:text-white transition"
+                  >Programs</a
+                >
+              </li>
+              <li>
+                <a href="/#apply" class="hover:text-white transition"
+                  >Admissions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Programs</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="/#programs" class="hover:text-white transition">CPA</a>
+              </li>
+              <li>
+                <a href="/#programs" class="hover:text-white transition"
+                  >CAMS</a
+                >
+              </li>
+              <li>
+                <a href="/#programs" class="hover:text-white transition">ATD</a>
+              </li>
+              <li>
+                <a href="/#programs" class="hover:text-white transition"
+                  >Computer Packages</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Contact Us</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-map-marker-alt text-dessa-secondary"></i>
+                <span>Ground Floor suite No. 4, Opp. Mathai Supermarket</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-dessa-secondary"></i>
+                <span>+254 768 201 415</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-dessa-secondary"></i>
+                <span>dessatrainingcollege@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-sm text-gray-500">
+            2026 Dessa Training College. All rights reserved.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

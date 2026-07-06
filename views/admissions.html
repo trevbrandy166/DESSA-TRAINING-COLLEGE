@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions | Dessa Training College</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dessa: {
+                primary: "#1e3a5f",
+                secondary: "#d4a017",
+                accent: "#e8f4f8",
+                dark: "#0f172a",
+                light: "#f8fafc",
+                gold: "#d4a017",
+                navy: "#1e3a5f",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .form-step {
+        display: none;
+      }
+      .form-step.active {
+        display: block;
+      }
+      .step-indicator {
+        transition: all 0.3s ease;
+      }
+      .step-indicator.active {
+        background-color: #d4a017;
+        color: #1e3a5f;
+      }
+      .step-indicator.completed {
+        background-color: #1e3a5f;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center space-x-3">
+            <img
+              src="/images/logo.png"
+              alt="Dessa Training College"
+              class="logo-img"
+            />
+          </a>
+
+          <!-- <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div> -->
+
+          <div class="hidden md:flex items-center space-x-8">
+    <a href="/" class="text-gray-700 hover:text-dessa-primary font-medium transition">Home</a>
+    <a href="/about" class="text-gray-700 hover:text-dessa-primary font-medium transition">About Us</a>
+    <a href="/#programs" class="text-gray-700 hover:text-dessa-primary font-medium transition">Programs</a>
+    <a href="/#testimonials" class="text-gray-700 hover:text-dessa-primary font-medium transition">Success Stories</a>
+    <a href="/#contact" class="text-gray-700 hover:text-dessa-primary font-medium transition">Contact</a>
+    <a href="/portal/login" class="text-gray-700 hover:text-dessa-primary font-medium transition">Student Portal</a>
+    <a href="/admissions" class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl">
+        Apply Now
+    </a>
+</div>
+
+          <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+    <div class="px-4 py-3 space-y-2">
+        <a href="/" class="block py-2 text-gray-700">Home</a>
+        <a href="/about" class="block py-2 text-gray-700">About Us</a>
+        <a href="/#programs" class="block py-2 text-gray-700">Programs</a>
+        <a href="/#contact" class="block py-2 text-gray-700">Contact</a>
+        <a href="/portal/login" class="block py-2 text-gray-700">Student Portal</a>
+        <a href="/admissions" class="block py-2 text-dessa-primary font-semibold">Apply Now</a>
+    </div>
+</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative pt-32 pb-16 bg-gradient-to-br from-dessa-primary via-dessa-primary to-slate-800 overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-20 right-20 w-72 h-72 bg-dessa-secondary rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-dessa-secondary text-sm font-medium mb-6 backdrop-blur-sm border border-white/20"
+        >
+          <i class="fas fa-file-signature mr-2"></i>
+          Begin Your Journey
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Apply to Dessa College
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Complete the form below to submit your application. Our admissions
+          team will review and contact you within 48 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="py-16 bg-dessa-light">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Progress Steps -->
+        <div class="flex justify-center mb-12">
+          <div class="flex items-center space-x-4">
+            <div
+              class="step-indicator active w-10 h-10 rounded-full bg-dessa-secondary text-dessa-primary flex items-center justify-center font-bold"
+              data-step="1"
+            >
+              1
+            </div>
+            <div class="w-12 h-1 bg-gray-300 rounded" id="line-1"></div>
+            <div
+              class="step-indicator w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold"
+              data-step="2"
+            >
+              2
+            </div>
+            <div class="w-12 h-1 bg-gray-300 rounded" id="line-2"></div>
+            <div
+              class="step-indicator w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold"
+              data-step="3"
+            >
+              3
+            </div>
+          </div>
+        </div>
+
+        
+
+        <form
+          id="application-form"
+          class="bg-white rounded-2xl shadow-xl overflow-hidden"
+        >
+          <!-- Step 1: Personal Information -->
+          <div class="form-step active p-8" data-step="1">
+            <h2
+              class="text-2xl font-bold text-dessa-primary mb-6 flex items-center"
+            >
+              <i class="fas fa-user text-dessa-secondary mr-3"></i>
+              Personal Information
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >First Name *</label
+                >
+                <input
+                  type="text"
+                  name="first_name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="John"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Last Name *</label
+                >
+                <input
+                  type="text"
+                  name="last_name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="Doe"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="+254 7XX XXX XXX"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Date of Birth</label
+                >
+                <input
+                  type="date"
+                  name="date_of_birth"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Gender</label
+                >
+                <select
+                  name="gender"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                >
+                  <option value="">Select gender...</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Nationality</label
+                >
+                <input
+                  type="text"
+                  name="nationality"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="Kenyan"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >ID Number / Passport</label
+                >
+                <input
+                  type="text"
+                  name="id_number"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  placeholder="12345678"
+                />
+              </div>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+              <button
+                type="button"
+                onclick="nextStep(2)"
+                class="bg-dessa-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300"
+              >
+                Next Step <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Program Selection -->
+          <div class="form-step p-8" data-step="2">
+            <h2
+              class="text-2xl font-bold text-dessa-primary mb-6 flex items-center"
+            >
+              <i class="fas fa-graduation-cap text-dessa-secondary mr-3"></i>
+              Program Selection
+            </h2>
+
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Select Program *</label
+                >
+                <select
+                  name="program_code"
+                  id="program-select"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                >
+                  <option value="">Choose your program...</option>
+                  <!-- Programs loaded dynamically -->
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Study Mode Preference</label
+                >
+                <div class="grid grid-cols-3 gap-4">
+                  <label
+                    class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-dessa-primary transition has-[:checked]:border-dessa-primary has-[:checked]:bg-dessa-accent"
+                  >
+                    <input
+                      type="radio"
+                      name="study_mode"
+                      value="physical"
+                      class="hidden"
+                    />
+                    <div class="text-center">
+                      <i
+                        class="fas fa-building text-2xl text-dessa-primary mb-2"
+                      ></i>
+                      <div class="font-medium">Physical</div>
+                    </div>
+                  </label>
+                  <label
+                    class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-dessa-primary transition has-[:checked]:border-dessa-primary has-[:checked]:bg-dessa-accent"
+                  >
+                    <input
+                      type="radio"
+                      name="study_mode"
+                      value="online"
+                      class="hidden"
+                    />
+                    <div class="text-center">
+                      <i
+                        class="fas fa-laptop text-2xl text-dessa-primary mb-2"
+                      ></i>
+                      <div class="font-medium">Online</div>
+                    </div>
+                  </label>
+                  <label
+                    class="flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-dessa-primary transition has-[:checked]:border-dessa-primary has-[:checked]:bg-dessa-accent"
+                  >
+                    <input
+                      type="radio"
+                      name="study_mode"
+                      value="both"
+                      class="hidden"
+                      checked
+                    />
+                    <div class="text-center">
+                      <i
+                        class="fas fa-exchange-alt text-2xl text-dessa-primary mb-2"
+                      ></i>
+                      <div class="font-medium">Both</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Highest Education Level</label
+                  >
+                  <select
+                    name="education_level"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                  >
+                    <option value="">Select level...</option>
+                    <option value="kcse">KCSE / High School</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="degree">Bachelor's Degree</option>
+                    <option value="masters">Master's Degree</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Institution Name</label
+                  >
+                  <input
+                    type="text"
+                    name="institution"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                    placeholder="e.g., Nairobi School"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Year Completed</label
+                  >
+                  <input
+                    type="number"
+                    name="year_completed"
+                    min="1980"
+                    max="2026"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                    placeholder="2023"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex justify-between">
+              <button
+                type="button"
+                onclick="prevStep(1)"
+                class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:border-dessa-primary hover:text-dessa-primary transition-all duration-300"
+              >
+                <i class="fas fa-arrow-left mr-2"></i> Back
+              </button>
+              <button
+                type="button"
+                onclick="nextStep(3)"
+                class="bg-dessa-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300"
+              >
+                Next Step <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+
+                          <!-- Step 3: Documents & Emergency Contact -->
+                <div class="form-step p-8" data-step="3">
+                    <h2 class="text-2xl font-bold text-dessa-primary mb-6 flex items-center">
+                        <i class="fas fa-file-upload text-dessa-secondary mr-3"></i>
+                        Documents & Emergency Contact
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- File Uploads -->
+                        <div class="bg-dessa-light rounded-xl p-6">
+                            <h3 class="font-semibold text-dessa-primary mb-4">Required Documents</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">ID Document (National ID or Passport) *</label>
+                                    <div class="flex items-center space-x-4">
+                                        <label class="flex-1 flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-dessa-primary hover:bg-dessa-accent transition">
+                                            <input type="file" name="id_document" accept=".pdf,.jpg,.jpeg,.png" required class="hidden" onchange="showFileName(this, 'id-doc-name')">
+                                            <div class="text-center">
+                                                <i class="fas fa-cloud-upload-alt text-2xl text-dessa-primary mb-2"></i>
+                                                <div class="text-sm text-gray-600" id="id-doc-name">Click to upload</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Max 5MB. PDF, JPG, or PNG</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Passport Photo *</label>
+                                    <div class="flex items-center space-x-4">
+                                        <label class="flex-1 flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-dessa-primary hover:bg-dessa-accent transition">
+                                            <input type="file" name="passport_photo" accept=".jpg,.jpeg,.png" required class="hidden" onchange="showFileName(this, 'photo-name')">
+                                            <div class="text-center">
+                                                <i class="fas fa-camera text-2xl text-dessa-primary mb-2"></i>
+                                                <div class="text-sm text-gray-600" id="photo-name">Click to upload</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Max 5MB. JPG or PNG. White background preferred.</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Academic Certificate (KCSE/Diploma/Degree)</label>
+                                    <div class="flex items-center space-x-4">
+                                        <label class="flex-1 flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-dessa-primary hover:bg-dessa-accent transition">
+                                            <input type="file" name="certificate" accept=".pdf,.jpg,.jpeg,.png" class="hidden" onchange="showFileName(this, 'cert-name')">
+                                            <div class="text-center">
+                                                <i class="fas fa-certificate text-2xl text-dessa-primary mb-2"></i>
+                                                <div class="text-sm text-gray-600" id="cert-name">Click to upload (optional)</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Max 5MB. PDF, JPG, or PNG</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Emergency Contact -->
+                        <div class="border-t border-gray-200 pt-6">
+                            <h3 class="font-semibold text-dessa-primary mb-4">Emergency Contact</h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Contact Name</label>
+                                    <input type="text" name="emergency_name"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                                           placeholder="Jane Doe">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Contact Phone</label>
+                                    <input type="tel" name="emergency_phone"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none"
+                                           placeholder="+254 7XX XXX XXX">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Relationship</label>
+                                    <select name="emergency_relation"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dessa-primary focus:border-transparent transition outline-none">
+                                        <option value="">Select relationship...</option>
+                                        <option value="parent">Parent</option>
+                                        <option value="spouse">Spouse</option>
+                                        <option value="sibling">Sibling</option>
+                                        <option value="friend">Friend</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Terms -->
+                        <div class="flex items-start space-x-3 pt-4">
+                            <input type="checkbox" id="terms" required
+                                   class="mt-1 w-5 h-5 text-dessa-primary border-gray-300 rounded focus:ring-dessa-primary">
+                            <label for="terms" class="text-sm text-gray-600">
+                                I confirm that all information provided is accurate and complete. I understand that providing false information may result in rejection of my application. I agree to the <a href="#" class="text-dessa-primary hover:underline">Terms and Conditions</a> and <a href="#" class="text-dessa-primary hover:underline">Privacy Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-between">
+                        <button type="button" onclick="prevStep(2)" 
+                                class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:border-dessa-primary hover:text-dessa-primary transition-all duration-300">
+                            <i class="fas fa-arrow-left mr-2"></i> Back
+                        </button>
+                        <button type="submit" id="submit-btn"
+                                class="bg-dessa-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg">
+                            <span id="btn-text">Submit Application</span>
+                            <span id="btn-loading" class="hidden">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>Submitting...
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div id="success-message" class="hidden p-12 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-4xl text-green-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-dessa-primary mb-4">Application Submitted!</h2>
+                    <p class="text-gray-600 text-lg mb-2">Thank you for applying to Dessa Training College.</p>
+                    <p class="text-gray-500 mb-8">Your application ID is: <span id="application-id" class="font-bold text-dessa-primary"></span></p>
+                    <p class="text-gray-500 mb-8">Our admissions team will review your application and contact you within 48 hours.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/" class="bg-dessa-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300">
+                            <i class="fas fa-home mr-2"></i> Back to Home
+                        </a>
+                        <a href="/program" class="border-2 border-dessa-primary text-dessa-primary px-8 py-3 rounded-lg font-semibold hover:bg-dessa-primary hover:text-white transition-all duration-300">
+                            <i class="fas fa-info-circle mr-2"></i> Program Details
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dessa-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/images/logo.png" alt="Dessa Training College" class="h-12 w-auto">
+                        <h3 class="text-lg font-bold">DESSA COLLEGE</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Empowering future accountants and IT professionals through quality education since 2010.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-dessa-secondary">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/" class="hover:text-white transition">Home</a></li>
+                        <li><a href="/about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="/#programs" class="hover:text-white transition">Programs</a></li>
+                        <li><a href="/admissions" class="hover:text-white transition">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-dessa-secondary">Programs</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/program?code=CPA" class="hover:text-white transition">CPA</a></li>
+                        <li><a href="/program?code=CAMS" class="hover:text-white transition">CAMS</a></li>
+                        <li><a href="/program?code=ATD" class="hover:text-white transition">ATD</a></li>
+                        <li><a href="/program?code=COMP-PKG" class="hover:text-white transition">Computer Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-dessa-secondary">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-dessa-secondary"></i>
+                            <span>Single Campus Location</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-dessa-secondary"></i>
+                            <span>+254 768 201 415</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-dessa-secondary"></i>
+                            <span>dessatrainingcollege@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500"> 2026 Dessa Training College. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-dessa-secondary transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-dessa-secondary transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-dessa-secondary transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-dessa-secondary transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Load programs into select dropdown
+        async function loadPrograms() {
+            try {
+                const response = await fetch('/api/programs');
+                const programs = await response.json();
+                const select = document.getElementById('program-select');
+                
+                programs.forEach(program => {
+                    const option = document.createElement('option');
+                    option.value = program.code;
+                    option.textContent = `${program.name} (KES ${program.fee_kes.toLocaleString()})`;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading programs:', error);
+            }
+        }
+
+        // Show uploaded file name
+        function showFileName(input, displayId) {
+            const display = document.getElementById(displayId);
+            if (input.files && input.files[0]) {
+                display.textContent = input.files[0].name;
+                display.classList.add('text-dessa-primary', 'font-medium');
+            }
+        }
+
+        // Form step navigation
+        let currentStep = 1;
+
+        function nextStep(step) {
+            // Validate current step
+            const currentStepEl = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            
+            let valid = true;
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    field.classList.add('border-red-500');
+                    valid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!valid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Update step indicators
+            document.querySelector(`.step-indicator[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.step-indicator[data-step="${currentStep}"]`).classList.add('completed');
+            
+            if (step > 1) {
+                document.getElementById(`line-${currentStep}`).classList.remove('bg-gray-300');
+                document.getElementById(`line-${currentStep}`).classList.add('bg-dessa-primary');
+            }
+
+            // Show next step
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+            
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.add('active');
+            
+            currentStep = step;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+            
+            document.querySelector(`.step-indicator[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.add('active');
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.remove('completed');
+            
+            if (step < 3) {
+                document.getElementById(`line-${step}`).classList.remove('bg-dessa-primary');
+                document.getElementById(`line-${step}`).classList.add('bg-gray-300');
+            }
+            
+            currentStep = step;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form submission
+        document.getElementById('application-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnLoading = document.getElementById('btn-loading');
+            
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('/api/apply', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('application-id').textContent = `#APP-${result.applicationId}`;
+                    document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+                    document.getElementById('success-message').classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert(result.error || 'Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                btnText.classList.remove('hidden');
+                btnLoading.classList.add('hidden');
+                btn.disabled = false;
+            }
+        });
+
+        // Load programs on page load
+        document.addEventListener('DOMContentLoaded', loadPrograms);
+    </script>
+
+
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

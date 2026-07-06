@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Details | Dessa Training College</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dessa: {
+                primary: "#1e3a5f",
+                secondary: "#d4a017",
+                accent: "#e8f4f8",
+                dark: "#0f172a",
+                light: "#f8fafc",
+                gold: "#d4a017",
+                navy: "#1e3a5f",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center space-x-3">
+            <img
+              src="/images/logo.png"
+              alt="Dessa Training College"
+              class="logo-img"
+            />
+          </a>
+          <!-- 
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div> -->
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >About Us</a
+            >
+            <a
+              href="/#programs"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Programs</a
+            >
+            <a
+              href="/#testimonials"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Success Stories</a
+            >
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Contact</a
+            >
+            <a
+              href="/portal/login"
+              class="text-gray-700 hover:text-dessa-primary font-medium transition"
+              >Student Portal</a
+            >
+            <a
+              href="/admissions"
+              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="/" class="block py-2 text-gray-700">Home</a>
+          <a href="/about" class="block py-2 text-gray-700">About Us</a>
+          <a href="/#programs" class="block py-2 text-gray-700">Programs</a>
+          <a href="/#contact" class="block py-2 text-gray-700">Contact</a>
+          <a href="/#apply" class="block py-2 text-dessa-primary font-semibold"
+            >Apply Now</a
+          >
+        </div>
+      </div> -->
+
+      <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="/" class="block py-2 text-gray-700">Home</a>
+          <a href="/about" class="block py-2 text-gray-700">About Us</a>
+          <a href="/#programs" class="block py-2 text-gray-700">Programs</a>
+          <a href="/#contact" class="block py-2 text-gray-700">Contact</a>
+          <a href="/portal/login" class="block py-2 text-gray-700"
+            >Student Portal</a
+          >
+          <a
+            href="/admissions"
+            class="block py-2 text-dessa-primary font-semibold"
+            >Apply Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div
+      id="loading"
+      class="pt-32 min-h-screen flex items-center justify-center"
+    >
+      <div class="text-center">
+        <i class="fas fa-spinner fa-spin text-4xl text-dessa-primary mb-4"></i>
+        <p class="text-gray-600">Loading program details...</p>
+      </div>
+    </div>
+
+    <!-- Program Content -->
+    <div id="program-content" class="hidden">
+      <!-- Hero Section -->
+      <section
+        class="relative pt-32 pb-20 bg-gradient-to-br from-dessa-primary via-dessa-primary to-slate-800 overflow-hidden"
+      >
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="absolute top-20 right-20 w-72 h-72 bg-dessa-secondary rounded-full blur-3xl"
+          ></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center space-x-2 mb-4">
+            <a
+              href="/#programs"
+              class="text-gray-400 hover:text-white transition text-sm"
+            >
+              <i class="fas fa-arrow-left mr-1"></i> Back to Programs
+            </a>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          >
+            <div>
+              <span
+                id="program-category"
+                class="inline-block px-3 py-1 bg-dessa-secondary/20 text-dessa-secondary rounded-full text-sm font-medium mb-4"
+              ></span>
+              <h1
+                id="program-name"
+                class="text-4xl md:text-5xl font-bold text-white mb-4"
+              ></h1>
+              <p
+                id="program-description"
+                class="text-xl text-gray-300 max-w-2xl"
+              ></p>
+            </div>
+
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
+            >
+              <div class="text-center">
+                <div class="text-sm text-gray-400 mb-1">Total Fee</div>
+                <div
+                  id="program-fee"
+                  class="text-3xl font-bold text-dessa-secondary"
+                ></div>
+                <div
+                  id="program-duration"
+                  class="text-sm text-gray-400 mt-1"
+                ></div>
+              </div>
+              <a
+                href="/#apply"
+                id="enroll-btn"
+                class="mt-4 block bg-dessa-secondary text-dessa-primary px-6 py-3 rounded-lg font-bold text-center hover:bg-white transition-all duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Details Grid -->
+      <section class="py-20 bg-dessa-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+              <!-- Full Description -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-dessa-primary mb-4">
+                  <i class="fas fa-info-circle text-dessa-secondary mr-2"></i>
+                  About This Program
+                </h2>
+                <p
+                  id="full-description"
+                  class="text-gray-600 leading-relaxed"
+                ></p>
+              </div>
+
+              <!-- Syllabus -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-dessa-primary mb-4">
+                  <i class="fas fa-book text-dessa-secondary mr-2"></i>
+                  Course Syllabus
+                </h2>
+                <div id="syllabus-content" class="space-y-3"></div>
+              </div>
+
+              <!-- Entry Requirements -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-dessa-primary mb-4">
+                  <i
+                    class="fas fa-clipboard-check text-dessa-secondary mr-2"
+                  ></i>
+                  Entry Requirements
+                </h2>
+                <div id="requirements-content" class="space-y-2"></div>
+              </div>
+
+              <!-- Career Paths -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-dessa-primary mb-4">
+                  <i class="fas fa-briefcase text-dessa-secondary mr-2"></i>
+                  Career Opportunities
+                </h2>
+                <div id="career-content" class="flex flex-wrap gap-3"></div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <!-- Schedule -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-xl font-bold text-dessa-primary mb-4">
+                  <i class="fas fa-calendar-alt text-dessa-secondary mr-2"></i>
+                  Class Schedule
+                </h3>
+                <div
+                  id="schedule-content"
+                  class="text-gray-600 text-sm space-y-2"
+                ></div>
+              </div>
+
+              <!-- Next Intake -->
+              <div class="bg-dessa-primary rounded-2xl p-8 text-white">
+                <h3 class="text-xl font-bold mb-4">
+                  <i class="fas fa-bullhorn text-dessa-secondary mr-2"></i>
+                  Next Intake
+                </h3>
+                <p id="intake-info" class="text-gray-300 mb-4"></p>
+                <a
+                  href="/#apply"
+                  class="block bg-dessa-secondary text-dessa-primary px-6 py-3 rounded-lg font-bold text-center hover:bg-white transition-all duration-300"
+                >
+                  Apply Now
+                </a>
+              </div>
+
+              <!-- Quick Stats -->
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-xl font-bold text-dessa-primary mb-4">
+                  Quick Facts
+                </h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 bg-dessa-accent rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-clock text-dessa-primary"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm text-gray-500">Duration</div>
+                      <div
+                        id="sidebar-duration"
+                        class="font-semibold text-dessa-primary"
+                      ></div>
+                    </div>
+                  </li>
+                  <li class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 bg-dessa-accent rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-laptop text-dessa-primary"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm text-gray-500">Mode</div>
+                      <div
+                        id="sidebar-mode"
+                        class="font-semibold text-dessa-primary"
+                      ></div>
+                    </div>
+                  </li>
+                  <li class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 bg-dessa-accent rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-certificate text-dessa-primary"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm text-gray-500">Certification</div>
+                      <div class="font-semibold text-dessa-primary">
+                        Professional
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Error State -->
+    <div
+      id="error-state"
+      class="hidden pt-32 min-h-screen flex items-center justify-center"
+    >
+      <div class="text-center">
+        <i class="fas fa-exclamation-circle text-6xl text-red-500 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Program Not Found</h2>
+        <p class="text-gray-600 mb-6">
+          The program you're looking for doesn't exist.
+        </p>
+        <a
+          href="/#programs"
+          class="bg-dessa-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition"
+        >
+          View All Programs
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dessa-dark text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <img
+                src="/images/logo.png"
+                alt="Dessa Training College"
+                class="h-12 w-auto"
+              />
+              <h3 class="text-lg font-bold">DESSA COLLEGE</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Empowering future accountants and IT professionals through quality
+              education since 2010.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="/" class="hover:text-white transition">Home</a></li>
+              <li>
+                <a href="/about" class="hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="/#programs" class="hover:text-white transition"
+                  >Programs</a
+                >
+              </li>
+              <li>
+                <a href="/#apply" class="hover:text-white transition"
+                  >Admissions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Programs</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="/program?code=CPA" class="hover:text-white transition"
+                  >CPA</a
+                >
+              </li>
+              <li>
+                <a href="/program?code=CAMS" class="hover:text-white transition"
+                  >CAMS</a
+                >
+              </li>
+              <li>
+                <a href="/program?code=ATD" class="hover:text-white transition"
+                  >ATD</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/program?code=COMP-PKG"
+                  class="hover:text-white transition"
+                  >Computer Packages</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-dessa-secondary">Contact Us</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-map-marker-alt text-dessa-secondary"></i>
+                <span>Single Campus Location</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-dessa-secondary"></i>
+                <span>+254 768 201 415</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-dessa-secondary"></i>
+                <span>dessatrainingcollege@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-sm text-gray-500">
+            2026 Dessa Training College. All rights reserved.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-dessa-secondary transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      // Load program details
+      async function loadProgram() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get("code");
+
+        if (!code) {
+          showError();
+          return;
+        }
+
+        try {
+          const response = await fetch(`/api/program/${code}`);
+
+          if (!response.ok) {
+            showError();
+            return;
+          }
+
+          const program = await response.json();
+          displayProgram(program);
+        } catch (error) {
+          console.error("Error loading program:", error);
+          showError();
+        }
+      }
+
+      function displayProgram(program) {
+        // Hide loading, show content
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("program-content").classList.remove("hidden");
+
+        // Basic info
+        document.getElementById("program-category").textContent =
+          program.category.toUpperCase();
+        document.getElementById("program-name").textContent = program.name;
+        document.getElementById("program-description").textContent =
+          program.description;
+        document.getElementById("program-fee").textContent =
+          `KES ${program.fee_kes.toLocaleString()}`;
+        document.getElementById("program-duration").textContent =
+          `${program.duration_months} months`;
+        document.getElementById("sidebar-duration").textContent =
+          `${program.duration_months} months`;
+        document.getElementById("sidebar-mode").textContent =
+          program.mode.charAt(0).toUpperCase() + program.mode.slice(1);
+
+        // Full description
+        document.getElementById("full-description").textContent =
+          program.full_description || program.description;
+
+        // Syllabus (split by newlines)
+        const syllabusHtml = program.syllabus
+          ? program.syllabus
+              .split("\n")
+              .map(
+                (item) =>
+                  `<div class="flex items-start space-x-3 p-3 bg-dessa-light rounded-lg">
+                        <i class="fas fa-check-circle text-dessa-secondary mt-1"></i>
+                        <span class="text-gray-700">${item}</span>
+                    </div>`,
+              )
+              .join("")
+          : '<p class="text-gray-500">Syllabus information coming soon.</p>';
+        document.getElementById("syllabus-content").innerHTML = syllabusHtml;
+
+        // Entry requirements
+        const reqHtml = program.entry_requirements
+          ? program.entry_requirements
+              .split("\n")
+              .map(
+                (item) =>
+                  `<div class="flex items-start space-x-3">
+                        <i class="fas fa-check text-dessa-secondary mt-1"></i>
+                        <span class="text-gray-700">${item}</span>
+                    </div>`,
+              )
+              .join("")
+          : '<p class="text-gray-500">Requirements information coming soon.</p>';
+        document.getElementById("requirements-content").innerHTML = reqHtml;
+
+        // Career paths
+        const careerHtml = program.career_paths
+          ? program.career_paths
+              .split(", ")
+              .map(
+                (item) =>
+                  `<span class="bg-dessa-primary text-white px-4 py-2 rounded-full text-sm font-medium">${item.trim()}</span>`,
+              )
+              .join("")
+          : '<p class="text-gray-500">Career information coming soon.</p>';
+        document.getElementById("career-content").innerHTML = careerHtml;
+
+        // Schedule
+        const scheduleHtml = program.schedule
+          ? program.schedule
+              .split("\n")
+              .map(
+                (item) =>
+                  `<div class="flex items-center space-x-2">
+                        <i class="fas fa-clock text-dessa-secondary text-xs"></i>
+                        <span>${item}</span>
+                    </div>`,
+              )
+              .join("")
+          : "<p>Schedule information coming soon.</p>";
+        document.getElementById("schedule-content").innerHTML = scheduleHtml;
+
+        // Next intake
+        document.getElementById("intake-info").textContent =
+          program.next_intake || "Contact us for next intake dates.";
+
+        // Update page title
+        document.title = `${program.name} | Dessa Training College`;
+
+        // Update enroll button link
+        document.getElementById("enroll-btn").href = `/#apply`;
+      }
+
+      function showError() {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("error-state").classList.remove("hidden");
+      }
+
+      // Load on page ready
+      document.addEventListener("DOMContentLoaded", loadProgram);
+    </script>
+  </body>
+</html>
