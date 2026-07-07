@@ -8,6 +8,7 @@
     </title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -924,6 +925,66 @@
       document.addEventListener("DOMContentLoaded", loadPrograms);
 
       // Form submission
+      // document
+      //   .getElementById("inquiry-form")
+      //   .addEventListener("submit", async function (e) {
+      //     e.preventDefault();
+
+      //     const btn = document.getElementById("submit-btn");
+      //     const btnText = document.getElementById("btn-text");
+      //     const btnLoading = document.getElementById("btn-loading");
+      //     const messageDiv = document.getElementById("form-message");
+
+      //     btnText.classList.add("hidden");
+      //     btnLoading.classList.remove("hidden");
+      //     btn.disabled = true;
+
+      //     const formData = {
+      //       full_name: this.full_name.value,
+      //       email: this.email.value,
+      //       phone: this.phone.value,
+      //       program_interest: this.program_interest.value,
+      //       message: this.message.value,
+      //     };
+
+      //     try {
+      //       const response = await fetch("/api/inquiry", {
+      //         method: "POST",
+      //         headers: { "Content-Type": "application/json" },
+      //         body: JSON.stringify(formData),
+      //       });
+
+      //       const result = await response.json();
+
+      //       messageDiv.classList.remove("hidden");
+      //       if (response.ok) {
+      //         messageDiv.className =
+      //           "rounded-lg p-4 text-center text-sm bg-green-100 text-green-800";
+      //         messageDiv.textContent = result.message;
+      //         this.reset();
+      //       } else {
+      //         messageDiv.className =
+      //           "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
+      //         messageDiv.textContent =
+      //           result.error || "Something went wrong. Please try again.";
+      //       }
+      //     } catch (error) {
+      //       messageDiv.classList.remove("hidden");
+      //       messageDiv.className =
+      //         "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
+      //       messageDiv.textContent =
+      //         "Network error. Please check your connection and try again.";
+      //     } finally {
+      //       btnText.classList.remove("hidden");
+      //       btnLoading.classList.add("hidden");
+      //       btn.disabled = false;
+      //     }
+      //   });
+
+      // Initialize EmailJS
+      emailjs.init("JneoujGrh7U8CFst6"); // Replace with your actual public key
+
+      // Form submission using EmailJS
       document
         .getElementById("inquiry-form")
         .addEventListener("submit", async function (e) {
@@ -938,7 +999,7 @@
           btnLoading.classList.remove("hidden");
           btn.disabled = true;
 
-          const formData = {
+          const templateParams = {
             full_name: this.full_name.value,
             email: this.email.value,
             phone: this.phone.value,
@@ -947,32 +1008,33 @@
           };
 
           try {
-            const response = await fetch("/api/inquiry", {
+            // Send email via EmailJS
+            await emailjs.send(
+              "service_ijrl3b8", // Replace with your EmailJS Service ID
+              "template_uaaso6u", // Replace with your EmailJS Template ID
+              templateParams,
+            );
+
+            // Also save to your database via your API
+            await fetch("/api/inquiry", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData),
+              body: JSON.stringify(templateParams),
             });
 
-            const result = await response.json();
-
             messageDiv.classList.remove("hidden");
-            if (response.ok) {
-              messageDiv.className =
-                "rounded-lg p-4 text-center text-sm bg-green-100 text-green-800";
-              messageDiv.textContent = result.message;
-              this.reset();
-            } else {
-              messageDiv.className =
-                "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
-              messageDiv.textContent =
-                result.error || "Something went wrong. Please try again.";
-            }
+            messageDiv.className =
+              "rounded-lg p-4 text-center text-sm bg-green-100 text-green-800";
+            messageDiv.textContent =
+              "Thank you! Your inquiry has been sent. We'll contact you within 24 hours.";
+            this.reset();
           } catch (error) {
+            console.error("Error:", error);
             messageDiv.classList.remove("hidden");
             messageDiv.className =
               "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
             messageDiv.textContent =
-              "Network error. Please check your connection and try again.";
+              "Failed to send. Please try again or contact us directly.";
           } finally {
             btnText.classList.remove("hidden");
             btnLoading.classList.add("hidden");

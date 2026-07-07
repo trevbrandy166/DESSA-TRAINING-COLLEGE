@@ -467,7 +467,50 @@ app.get("/api/program/:code", (req, res) => {
 });
 
 // Submit inquiry (homepage) — now also sends email notification
-app.post("/api/inquiry", async (req, res) => {
+// app.post("/api/inquiry", async (req, res) => {
+//   const { full_name, email, phone, program_interest, message } = req.body;
+
+//   if (!full_name || !email || !phone) {
+//     return res
+//       .status(400)
+//       .json({ error: "Full name, email, and phone are required." });
+//   }
+
+//   const db = getDb();
+//   const sql = `INSERT INTO inquiries (full_name, email, phone, program_interest, message) VALUES (?, ?, ?, ?, ?)`;
+
+//   db.run(
+//     sql,
+//     [full_name, email, phone, program_interest || "", message || ""],
+//     async function (err) {
+//       if (err) {
+//         res.status(500).json({ error: err.message });
+//         db.close();
+//         return;
+//       }
+
+//       // Send email notification to school email
+//       const emailSent = await sendInquiryNotification({
+//         full_name,
+//         email,
+//         phone,
+//         program_interest,
+//         message,
+//       });
+
+//       res.status(201).json({
+//         success: true,
+//         message: "Thank you! We will contact you within 24 hours.",
+//         id: this.lastID,
+//         emailSent: emailSent,
+//       });
+//       db.close();
+//     },
+//   );
+// });
+
+// Submit inquiry (homepage) — saves to DB only, email sent from client via EmailJS
+app.post("/api/inquiry", (req, res) => {
   const { full_name, email, phone, program_interest, message } = req.body;
 
   if (!full_name || !email || !phone) {
@@ -482,27 +525,16 @@ app.post("/api/inquiry", async (req, res) => {
   db.run(
     sql,
     [full_name, email, phone, program_interest || "", message || ""],
-    async function (err) {
+    function (err) {
       if (err) {
         res.status(500).json({ error: err.message });
         db.close();
         return;
       }
-
-      // Send email notification to school email
-      const emailSent = await sendInquiryNotification({
-        full_name,
-        email,
-        phone,
-        program_interest,
-        message,
-      });
-
       res.status(201).json({
         success: true,
         message: "Thank you! We will contact you within 24 hours.",
         id: this.lastID,
-        emailSent: emailSent,
       });
       db.close();
     },
