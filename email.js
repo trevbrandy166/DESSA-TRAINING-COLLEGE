@@ -269,4 +269,67 @@ async function sendRejectionEmail(to, name, reason) {
   }
 }
 
-module.exports = { sendApprovalEmail, sendRejectionEmail };
+// Send inquiry notification to admin (school email)
+async function sendInquiryNotification(inquiryData) {
+  const mailOptions = {
+    from: process.env.EMAIL_FROM,
+    to: "dessatrainingcollege@gmail.com",
+    subject: `New Website Inquiry from ${inquiryData.full_name}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #1e3a5f; padding: 20px; text-align: center;">
+          <h1 style="color: #d4a017; margin: 0;">DESSA TRAINING COLLEGE</h1>
+          <p style="color: white; margin: 5px 0;">New Website Inquiry</p>
+        </div>
+        <div style="padding: 30px; background: #f8fafc;">
+          <h2 style="color: #1e3a5f;">New Inquiry Received</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #1e3a5f;">Full Name:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd;">${inquiryData.full_name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #1e3a5f;">Email:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd;">${inquiryData.email}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #1e3a5f;">Phone:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd;">${inquiryData.phone}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #1e3a5f;">Program Interest:</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd;">${inquiryData.program_interest || "Not specified"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; font-weight: bold; color: #1e3a5f; vertical-align: top;">Message:</td>
+              <td style="padding: 10px;">${inquiryData.message || "No message provided"}</td>
+            </tr>
+          </table>
+          <div style="background: #e8f4f8; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 0;"><strong>Action Required:</strong> Contact this prospect within 24 hours.</p>
+          </div>
+        </div>
+        <div style="background: #1e3a5f; padding: 20px; text-align: center; color: white;">
+          <p style="margin: 0; font-size: 12px;">© 2026 Dessa Training College. All rights reserved.</p>
+        </div>
+      </div>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("Inquiry notification sent to admin");
+    return true;
+  } catch (error) {
+    console.error("Failed to send inquiry notification:", error);
+    return false;
+  }
+}
+
+// module.exports = { sendApprovalEmail, sendRejectionEmail };
+
+module.exports = {
+  sendApprovalEmail,
+  sendRejectionEmail,
+  sendInquiryNotification,
+};
