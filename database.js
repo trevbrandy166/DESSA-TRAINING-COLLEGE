@@ -390,7 +390,7 @@ function insertSampleData(db) {
       "Professional accounting qualification recognized globally. Covers financial reporting, auditing, taxation, and management accounting.",
       18,
       "both",
-      85000,
+      45000,
       "/images/cpa.jpg",
     ],
     [
@@ -420,7 +420,7 @@ function insertSampleData(db) {
       "Practical computer skills including MS Office, internet, email, and basic programming. Perfect for beginners and professionals.",
       3,
       "both",
-      15000,
+      6000,
       "/images/computer.jpg",
     ],
   ];
