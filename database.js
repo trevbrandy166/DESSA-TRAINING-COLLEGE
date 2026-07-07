@@ -395,9 +395,9 @@ function insertSampleData(db) {
     ],
     [
       "CAMS",
-      "Certified Anti-Money Laundering Specialist",
+      "Certificate in Accounting and Management Skills",
       "accounting",
-      "Global certification for professionals in anti-money laundering and financial crime detection.",
+      "Foundational qualification equipping learners with essential skills in accounting, management, and business communication. Ideal starting point for a career in accounting and business.",
       6,
       "both",
       45000,
