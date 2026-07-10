@@ -56,62 +56,6 @@
               class="h-16 mx-auto mb-4"
             />
           </a>
-          <!-- <div class="flex items-center space-x-3">
-            <div
-              class="w-12 h-12 bg-dessa-primary rounded-lg flex items-center justify-center"
-            >
-              <span class="text-white font-bold text-xl">D</span>
-            </div>
-            <div>
-              <h1 class="text-xl font-bold text-dessa-primary leading-tight">
-                DESSA
-              </h1>
-              <p class="text-xs text-gray-500 tracking-wider">
-                TRAINING COLLEGE
-              </p>
-            </div>
-          </div> -->
-          <!-- 
-          <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >Home</a
-            >
-
-            <a
-              href="/about"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >About Us</a
-            >
-
-            <a
-              href="#programs"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >Programs</a
-            >
-            <a
-              href="#why-dessa"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >Why Dessa</a
-            >
-            <a
-              href="#testimonials"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >Success Stories</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-dessa-primary font-medium transition"
-              >Contact</a
-            >
-            <a
-              href="/admissions"
-              class="bg-dessa-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-dessa-secondary hover:text-dessa-primary transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Apply Now
-            </a>
-          </div> -->
 
           <div class="hidden md:flex items-center space-x-8">
             <a
@@ -663,7 +607,14 @@
                   <option value="ATD">
                     Accounting Technicians Diploma (ATD)
                   </option>
-                  <option value="COMP-PKG">Computer Packages</option>
+                  <option value="COMP-PKG">
+                    Accounting and Computer Packages
+                  </option>
+                  <option value="CS">Certified Secretaries (CS)</option>
+                  <option value="CIFA">
+                    Certified Investment and Financial Analyst (CIFA)
+                  </option>
+                  <option value="WEB-DEV">Web Development</option>
                   <option value="Not Sure">Not Sure — Need Guidance</option>
                 </select>
               </div>
@@ -760,15 +711,6 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <!-- <div class="flex items-center space-x-3 mb-4">
-              <div
-                class="w-10 h-10 bg-dessa-secondary rounded-lg flex items-center justify-center"
-              >
-                <span class="text-dessa-primary font-bold text-lg">D</span>
-              </div>
-              <h3 class="text-lg font-bold">DESSA COLLEGE</h3>
-            </div> -->
-
             <div class="flex items-center space-x-3 mb-4">
               <img
                 src="/images/logo.png"
@@ -812,7 +754,14 @@
               <li><a href="#" class="hover:text-white transition">ATD</a></li>
               <li>
                 <a href="#" class="hover:text-white transition"
-                  >Computer Packages</a
+                  >Accounting & Computer Packages</a
+                >
+              </li>
+              <li><a href="#" class="hover:text-white transition">CS</a></li>
+              <li><a href="#" class="hover:text-white transition">CIFA</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Web Development</a
                 >
               </li>
             </ul>
@@ -901,13 +850,9 @@
                             <h3 class="text-xl font-bold text-dessa-primary mb-2">${program.name}</h3>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-3">${program.description}</p>
                             <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <div>
-                                    <span class="text-xs text-gray-500">Tuition</span>
-                                    <p class="text-lg font-bold text-dessa-primary">KES ${program.fee_kes.toLocaleString()}</p>
-                                </div>
                                 <button onclick="window.location.href='/program?code=${program.code}'" 
-                                        class="bg-dessa-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-dessa-secondary hover:text-dessa-primary transition">
-                                    Enroll
+                                        class="w-full bg-dessa-primary text-white px-4 py-3 rounded-lg text-sm font-medium hover:bg-dessa-secondary hover:text-dessa-primary transition">
+                                    Learn More
                                 </button>
                             </div>
                         </div>
@@ -924,65 +869,8 @@
 
       document.addEventListener("DOMContentLoaded", loadPrograms);
 
-      // Form submission
-      // document
-      //   .getElementById("inquiry-form")
-      //   .addEventListener("submit", async function (e) {
-      //     e.preventDefault();
-
-      //     const btn = document.getElementById("submit-btn");
-      //     const btnText = document.getElementById("btn-text");
-      //     const btnLoading = document.getElementById("btn-loading");
-      //     const messageDiv = document.getElementById("form-message");
-
-      //     btnText.classList.add("hidden");
-      //     btnLoading.classList.remove("hidden");
-      //     btn.disabled = true;
-
-      //     const formData = {
-      //       full_name: this.full_name.value,
-      //       email: this.email.value,
-      //       phone: this.phone.value,
-      //       program_interest: this.program_interest.value,
-      //       message: this.message.value,
-      //     };
-
-      //     try {
-      //       const response = await fetch("/api/inquiry", {
-      //         method: "POST",
-      //         headers: { "Content-Type": "application/json" },
-      //         body: JSON.stringify(formData),
-      //       });
-
-      //       const result = await response.json();
-
-      //       messageDiv.classList.remove("hidden");
-      //       if (response.ok) {
-      //         messageDiv.className =
-      //           "rounded-lg p-4 text-center text-sm bg-green-100 text-green-800";
-      //         messageDiv.textContent = result.message;
-      //         this.reset();
-      //       } else {
-      //         messageDiv.className =
-      //           "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
-      //         messageDiv.textContent =
-      //           result.error || "Something went wrong. Please try again.";
-      //       }
-      //     } catch (error) {
-      //       messageDiv.classList.remove("hidden");
-      //       messageDiv.className =
-      //         "rounded-lg p-4 text-center text-sm bg-red-100 text-red-800";
-      //       messageDiv.textContent =
-      //         "Network error. Please check your connection and try again.";
-      //     } finally {
-      //       btnText.classList.remove("hidden");
-      //       btnLoading.classList.add("hidden");
-      //       btn.disabled = false;
-      //     }
-      //   });
-
       // Initialize EmailJS
-      emailjs.init("JneoujGrh7U8CFst6"); // Replace with your actual public key
+      emailjs.init("JneoujGrh7U8CFst6");
 
       // Form submission using EmailJS
       document
@@ -1008,14 +896,12 @@
           };
 
           try {
-            // Send email via EmailJS
             await emailjs.send(
-              "service_ijrl3b8", // Replace with your EmailJS Service ID
-              "template_uaaso6u", // Replace with your EmailJS Template ID
+              "service_ijrl3b8",
+              "template_uaaso6u",
               templateParams,
             );
 
-            // Also save to your database via your API
             await fetch("/api/inquiry", {
               method: "POST",
               headers: { "Content-Type": "application/json" },

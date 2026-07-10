@@ -273,6 +273,215 @@
 
 // module.exports = { getDb, initDb };
 
+// const sqlite3 = require("sqlite3").verbose();
+// const path = require("path");
+
+// const DB_PATH = path.join(__dirname, "dessa.db");
+
+// function getDb() {
+//   return new sqlite3.Database(DB_PATH, (err) => {
+//     if (err) {
+//       console.error("Error opening database:", err.message);
+//     }
+//   });
+// }
+
+// function initDb() {
+//   const db = getDb();
+
+//   db.serialize(() => {
+//     // Programs table
+//     db.run(`
+//       CREATE TABLE IF NOT EXISTS programs (
+//         id INTEGER PRIMARY KEY AUTOINCREMENT,
+//         code TEXT UNIQUE NOT NULL,
+//         name TEXT NOT NULL,
+//         category TEXT NOT NULL,
+//         description TEXT,
+//         duration_months INTEGER,
+//         mode TEXT DEFAULT 'both',
+//         fee_kes INTEGER,
+//         image_url TEXT,
+//         is_active INTEGER DEFAULT 1,
+//         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+//       )
+//     `);
+
+//     // Program details table
+//     db.run(`
+//       CREATE TABLE IF NOT EXISTS program_details (
+//         id INTEGER PRIMARY KEY AUTOINCREMENT,
+//         program_code TEXT NOT NULL,
+//         full_description TEXT,
+//         syllabus TEXT,
+//         entry_requirements TEXT,
+//         career_paths TEXT,
+//         schedule TEXT,
+//         next_intake TEXT,
+//         FOREIGN KEY (program_code) REFERENCES programs(code)
+//       )
+//     `);
+
+//     // Inquiries table (homepage)
+//     db.run(`
+//       CREATE TABLE IF NOT EXISTS inquiries (
+//         id INTEGER PRIMARY KEY AUTOINCREMENT,
+//         full_name TEXT NOT NULL,
+//         email TEXT NOT NULL,
+//         phone TEXT NOT NULL,
+//         program_interest TEXT,
+//         message TEXT,
+//         status TEXT DEFAULT 'new',
+//         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+//       )
+//     `);
+
+//     // Applications table (admissions) — with reg_number for approved students
+//     db.run(`
+//       CREATE TABLE IF NOT EXISTS applications (
+//         id INTEGER PRIMARY KEY AUTOINCREMENT,
+//         first_name TEXT NOT NULL,
+//         last_name TEXT NOT NULL,
+//         email TEXT NOT NULL,
+//         phone TEXT NOT NULL,
+//         date_of_birth TEXT,
+//         gender TEXT,
+//         nationality TEXT,
+//         id_number TEXT,
+//         program_code TEXT NOT NULL,
+//         study_mode TEXT,
+//         education_level TEXT,
+//         institution TEXT,
+//         year_completed TEXT,
+//         emergency_name TEXT,
+//         emergency_phone TEXT,
+//         emergency_relation TEXT,
+//         id_document_path TEXT,
+//         photo_path TEXT,
+//         certificate_path TEXT,
+//         reg_number TEXT UNIQUE,
+//         status TEXT DEFAULT 'pending',
+//         submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP
+//       )
+//     `);
+
+//     // Check if programs exist
+//     db.get("SELECT COUNT(*) as count FROM programs", (err, row) => {
+//       if (err) {
+//         console.error(err);
+//         db.close();
+//         return;
+//       }
+//       if (row.count === 0) {
+//         insertSampleData(db);
+//       } else {
+//         db.close();
+//       }
+//     });
+//   });
+// }
+
+// function insertSampleData(db) {
+//   const programs = [
+//     [
+//       "CPA",
+//       "Certified Public Accountant",
+//       "accounting",
+//       "Professional accounting qualification recognized globally. Covers financial reporting, auditing, taxation, and management accounting.",
+//       18,
+//       "both",
+//       45000,
+//       "/images/cpa.jpg",
+//     ],
+//     [
+//       "CAMS",
+//       "Certificate in Accounting and Management Skills",
+//       "accounting",
+//       "Foundational qualification equipping learners with essential skills in accounting, management, and business communication. Ideal starting point for a career in accounting and business.",
+//       6,
+//       "both",
+//       45000,
+//       "/images/cams.jpg",
+//     ],
+//     [
+//       "ATD",
+//       "Accounting Technicians Diploma",
+//       "accounting",
+//       "Foundation-level qualification for aspiring accounting technicians. Covers bookkeeping, financial accounting, and business law.",
+//       12,
+//       "both",
+//       35000,
+//       "/images/atd.jpg",
+//     ],
+//     [
+//       "COMP-PKG",
+//       "Computer Packages",
+//       "computer",
+//       "Practical computer skills including MS Office, internet, email, and basic programming. Perfect for beginners and professionals.",
+//       3,
+//       "both",
+//       6000,
+//       "/images/computer.jpg",
+//     ],
+//   ];
+
+//   const insertProg = db.prepare(
+//     "INSERT INTO programs (code, name, category, description, duration_months, mode, fee_kes, image_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+//   );
+//   programs.forEach((p) => insertProg.run(p));
+//   insertProg.finalize();
+
+//   const details = [
+//     [
+//       "CPA",
+//       "The Certified Public Accountant (CPA) qualification is the premier accounting credential in Kenya and across East Africa. It is administered by KASNEB and recognized globally by professional bodies including ACCA and CIMA.",
+//       "Part I: Financial Accounting, Communication, Introduction to Law and Economics, Information Communication Technology\nPart II: Financial Management, Principles of Management, Business Law, Auditing and Assurance\nPart III: Advanced Financial Reporting, Advanced Auditing and Assurance, Advanced Taxation, Advanced Management Accounting\nPart IV: Strategic Management and Leadership, Advanced Public Financial Management, Advanced Financial Management, Advanced Taxation",
+//       "KCSE C+ (or equivalent) with at least C+ in Mathematics and English, OR\nKASNEB Technician Diploma, OR\nDegree from recognized university",
+//       "Chief Financial Officer, Audit Manager, Tax Consultant, Financial Controller, Internal Auditor, Forensic Accountant, Risk Manager",
+//       "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
+//       "September 2026 Intake - Now Open",
+//     ],
+//     [
+//       "CAMS",
+//       "The Certificate in Accounting and Management Skills (CAMS) is designed to equip learners with foundational skills in accounting, management, and business communication. It is the perfect starting point for those looking to build a career in accounting and business management.",
+//       "Module 1: Introduction to Accounting\nModule 2: Business Communication\nModule 3: Principles of Management\nModule 4: Business Mathematics and Statistics\nModule 5: Economics\nModule 6: Information Communication Technology",
+//       "KCSE with a minimum of D (D plain)",
+//       "Accounts Assistant, Bookkeeper, Office Administrator, Sales Clerk, Data Entry Clerk, Small Business Owner",
+//       "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
+//       "August Intake Ongoing",
+//     ],
+//     [
+//       "ATD",
+//       "The Accounting Technicians Diploma (ATD) provides a solid foundation in accounting principles and practices. It is the entry-level qualification for those aspiring to become professional accountants.",
+//       "Level I: Business Mathematics, Introduction to Financial Accounting, Principles of Economics, Communication Skills\nLevel II: Financial Accounting, Principles of Management, Business Law, Principles of Public Finance and Taxation\nLevel III: Advanced Financial Accounting, Auditing and Assurance, Management Accounting, Public Finance and Taxation",
+//       "KCSE C- (or equivalent), OR\nCertificate in relevant field, OR\nMature entry (23+ years with work experience)",
+//       "Bookkeeper, Accounts Assistant, Tax Assistant, Audit Junior, Payroll Administrator, Credit Controller, Finance Assistant",
+//       "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
+//       "September 2026 Intake - Now Open",
+//     ],
+//     [
+//       "COMP-PKG",
+//       "Our Computer Packages course provides comprehensive training in essential computer skills for the modern workplace. From basic operations to advanced applications, we prepare you for digital proficiency.",
+//       "Module 1: Computer Fundamentals (Windows, File Management, Internet & Email)\nModule 2: Microsoft Word (Document Creation, Formatting, Mail Merge, Templates)\nModule 3: Microsoft Excel (Formulas, Functions, Charts, Pivot Tables, Data Analysis)\nModule 4: Microsoft PowerPoint (Presentations, Animations, Design Principles)\nModule 5: Advanced Packages (QuickBooks, Sage, Pastel, Graphic Design Basics)",
+//       "No prior experience needed\nBasic reading and writing skills\nWillingness to learn",
+//       "Office Administrator, Data Entry Clerk, Receptionist, Accounts Assistant, Customer Service Representative, Small Business Owner, Freelance Professional",
+//       "Morning session: 9am-12pm\nAfternoon session: 2pm-5pm\nEvening session: 6pm-9pm",
+//       "Rolling intake - New classes every Monday",
+//     ],
+//   ];
+
+//   const insertDet = db.prepare(
+//     "INSERT INTO program_details (program_code, full_description, syllabus, entry_requirements, career_paths, schedule, next_intake) VALUES (?, ?, ?, ?, ?, ?, ?)",
+//   );
+//   details.forEach((d) => insertDet.run(d));
+//   insertDet.finalize();
+
+//   console.log("Sample programs and details inserted.");
+//   db.close();
+// }
+
+// module.exports = { getDb, initDb };
+
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
@@ -336,7 +545,7 @@ function initDb() {
       )
     `);
 
-    // Applications table (admissions) — with reg_number for approved students
+    // Applications table (admissions)
     db.run(`
       CREATE TABLE IF NOT EXISTS applications (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -390,7 +599,7 @@ function insertSampleData(db) {
       "Professional accounting qualification recognized globally. Covers financial reporting, auditing, taxation, and management accounting.",
       18,
       "both",
-      45000,
+      null,
       "/images/cpa.jpg",
     ],
     [
@@ -400,7 +609,7 @@ function insertSampleData(db) {
       "Foundational qualification equipping learners with essential skills in accounting, management, and business communication. Ideal starting point for a career in accounting and business.",
       6,
       "both",
-      45000,
+      null,
       "/images/cams.jpg",
     ],
     [
@@ -410,18 +619,48 @@ function insertSampleData(db) {
       "Foundation-level qualification for aspiring accounting technicians. Covers bookkeeping, financial accounting, and business law.",
       12,
       "both",
-      35000,
+      null,
       "/images/atd.jpg",
     ],
     [
       "COMP-PKG",
-      "Computer Packages",
+      "Accounting and Computer Packages",
       "computer",
-      "Practical computer skills including MS Office, internet, email, and basic programming. Perfect for beginners and professionals.",
+      "Comprehensive training in essential accounting software and computer skills for the modern workplace. From basic operations to advanced applications, we prepare you for digital proficiency.",
       3,
       "both",
-      6000,
+      null,
       "/images/computer.jpg",
+    ],
+    [
+      "CS",
+      "Certified Secretaries",
+      "accounting",
+      "Professional qualification for those aspiring to become company secretaries and corporate governance professionals. Covers company law, governance, and secretarial practice.",
+      18,
+      "both",
+      null,
+      "/images/cs.jpg",
+    ],
+    [
+      "CIFA",
+      "Certified Investment and Financial Analyst",
+      "accounting",
+      "Specialized qualification for professionals in investment analysis, portfolio management, and financial planning. Equips learners with skills in equity research, fund management, and financial advisory.",
+      18,
+      "both",
+      null,
+      "/images/cifa.jpg",
+    ],
+    [
+      "WEB-DEV",
+      "Web Development",
+      "computer",
+      "Practical training in modern web development technologies including HTML, CSS, JavaScript, and responsive design. Build real-world websites and web applications from scratch.",
+      4,
+      "both",
+      null,
+      "/images/webdev.jpg",
     ],
   ];
 
@@ -461,11 +700,38 @@ function insertSampleData(db) {
     ],
     [
       "COMP-PKG",
-      "Our Computer Packages course provides comprehensive training in essential computer skills for the modern workplace. From basic operations to advanced applications, we prepare you for digital proficiency.",
+      "Our Accounting and Computer Packages course provides comprehensive training in essential accounting software and computer skills for the modern workplace. From basic operations to advanced applications, we prepare you for digital proficiency.",
       "Module 1: Computer Fundamentals (Windows, File Management, Internet & Email)\nModule 2: Microsoft Word (Document Creation, Formatting, Mail Merge, Templates)\nModule 3: Microsoft Excel (Formulas, Functions, Charts, Pivot Tables, Data Analysis)\nModule 4: Microsoft PowerPoint (Presentations, Animations, Design Principles)\nModule 5: Advanced Packages (QuickBooks, Sage, Pastel, Graphic Design Basics)",
       "No prior experience needed\nBasic reading and writing skills\nWillingness to learn",
       "Office Administrator, Data Entry Clerk, Receptionist, Accounts Assistant, Customer Service Representative, Small Business Owner, Freelance Professional",
       "Morning session: 9am-12pm\nAfternoon session: 2pm-5pm\nEvening session: 6pm-9pm",
+      "Rolling intake - New classes every Monday",
+    ],
+    [
+      "CS",
+      "The Certified Secretaries (CS) qualification is designed for professionals who wish to specialize in corporate governance, company secretarial practice, and administration. It is recognized by the Institute of Certified Secretaries (ICS) and prepares learners for leadership roles in corporate management.",
+      "Part I: Company Law, Secretarial Practice, Economics, Communication\nPart II: Corporate Governance, Financial Management, Human Resource Management, Business Ethics\nPart III: Strategic Management, Corporate Administration, Advanced Company Law, Risk Management\nPart IV: Advanced Corporate Governance, International Business, Project Management, Leadership",
+      "KCSE C+ (or equivalent), OR\nDiploma in Business Administration, OR\nDegree from recognized university",
+      "Company Secretary, Corporate Governance Officer, Compliance Manager, Board Administrator, Legal Assistant, Corporate Affairs Manager",
+      "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
+      "September 2026 Intake - Now Open",
+    ],
+    [
+      "CIFA",
+      "The Certified Investment and Financial Analyst (CIFA) qualification equips professionals with advanced skills in investment analysis, portfolio management, and financial planning. It is ideal for those seeking careers in banking, investment firms, and financial advisory services.",
+      "Part I: Financial Accounting, Economics, Quantitative Analysis, Business Communication\nPart II: Financial Management, Investment Analysis, Portfolio Management, Financial Markets\nPart III: Advanced Investment Analysis, Risk Management, Derivatives, International Finance\nPart IV: Strategic Financial Management, Wealth Management, Corporate Finance, Financial Modeling",
+      "KCSE C+ (or equivalent) with at least C+ in Mathematics, OR\nDegree in Finance, Economics, or Accounting, OR\nProfessional qualification in a relevant field",
+      "Investment Analyst, Portfolio Manager, Financial Advisor, Equity Research Analyst, Fund Manager, Risk Analyst, Wealth Manager",
+      "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
+      "September 2026 Intake - Now Open",
+    ],
+    [
+      "WEB-DEV",
+      "Our Web Development course provides hands-on training in building modern, responsive websites and web applications. From HTML and CSS fundamentals to JavaScript interactivity, learners gain practical skills to launch a career in tech.",
+      "Module 1: HTML5 & CSS3 (Structure, Styling, Layouts, Flexbox, Grid)\nModule 2: JavaScript Fundamentals (Variables, Functions, DOM Manipulation, Events)\nModule 3: Responsive Design (Mobile-First, Media Queries, Bootstrap/Tailwind)\nModule 4: Version Control with Git & GitHub\nModule 5: Deployment & Hosting (Netlify, Vercel, Domain Management)\nModule 6: Final Project (Build and Deploy a Complete Website)",
+      "No prior experience needed\nBasic computer literacy\nWillingness to learn and practice",
+      "Frontend Developer, Web Designer, Freelance Developer, UI/UX Developer, Junior Full-Stack Developer, Tech Entrepreneur",
+      "Weekday classes: Mon-Fri 9am-9pm\nWeekend classes: Sat 9am-5pm\nOnline Classes: Mon-Fri 9am-9pm",
       "Rolling intake - New classes every Monday",
     ],
   ];

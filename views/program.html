@@ -166,14 +166,10 @@
               class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
             >
               <div class="text-center">
-                <div class="text-sm text-gray-400 mb-1">Total Fee</div>
-                <div
-                  id="program-fee"
-                  class="text-3xl font-bold text-dessa-secondary"
-                ></div>
+                <div class="text-sm text-gray-400 mb-1">Duration</div>
                 <div
                   id="program-duration"
-                  class="text-sm text-gray-400 mt-1"
+                  class="text-3xl font-bold text-dessa-secondary"
                 ></div>
               </div>
               <a
@@ -403,7 +399,24 @@
                 <a
                   href="/program?code=COMP-PKG"
                   class="hover:text-white transition"
-                  >Computer Packages</a
+                  >Accounting & Computer Packages</a
+                >
+              </li>
+              <li>
+                <a href="/program?code=CS" class="hover:text-white transition"
+                  >CS</a
+                >
+              </li>
+              <li>
+                <a href="/program?code=CIFA" class="hover:text-white transition"
+                  >CIFA</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/program?code=WEB-DEV"
+                  class="hover:text-white transition"
+                  >Web Development</a
                 >
               </li>
             </ul>
@@ -499,8 +512,6 @@
         document.getElementById("program-name").textContent = program.name;
         document.getElementById("program-description").textContent =
           program.description;
-        document.getElementById("program-fee").textContent =
-          `KES ${program.fee_kes.toLocaleString()}`;
         document.getElementById("program-duration").textContent =
           `${program.duration_months} months`;
         document.getElementById("sidebar-duration").textContent =
