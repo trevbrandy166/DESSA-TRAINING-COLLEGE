@@ -645,22 +645,41 @@
     <script src="/js/main.js"></script>
     <script>
         // Load programs into select dropdown
-        async function loadPrograms() {
-            try {
-                const response = await fetch('/api/programs');
-                const programs = await response.json();
-                const select = document.getElementById('program-select');
+        // async function loadPrograms() {
+        //     try {
+        //         const response = await fetch('/api/programs');
+        //         const programs = await response.json();
+        //         const select = document.getElementById('program-select');
                 
-                programs.forEach(program => {
-                    const option = document.createElement('option');
-                    option.value = program.code;
-                    option.textContent = `${program.name} (KES ${program.fee_kes.toLocaleString()})`;
-                    select.appendChild(option);
-                });
-            } catch (error) {
-                console.error('Error loading programs:', error);
-            }
-        }
+        //         programs.forEach(program => {
+        //             const option = document.createElement('option');
+        //             option.value = program.code;
+        //             option.textContent = `${program.name} (KES ${program.fee_kes.toLocaleString()})`;
+        //             select.appendChild(option);
+        //         });
+        //     } catch (error) {
+        //         console.error('Error loading programs:', error);
+        //     }
+        // }
+
+        // Load programs into select dropdown
+async function loadPrograms() {
+    try {
+        const response = await fetch('/api/programs');
+        const programs = await response.json();
+        const select = document.getElementById('program-select');
+        
+        programs.forEach(program => {
+            const option = document.createElement('option');
+            option.value = program.code;
+            // Fee removed from display — just show program name
+            option.textContent = program.name;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error loading programs:', error);
+    }
+}
 
         // Show uploaded file name
         function showFileName(input, displayId) {
