@@ -177,20 +177,20 @@ async function sendApprovalEmail(to, name, regNumber, program) {
           
           <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0;"><strong>Payment Options:</strong></p>
-            <p style="margin: 5px 0;">💳 M-Pesa: Paybill 522522, Account: ${regNumber}</p>
-            <p style="margin: 5px 0;">🏦 Bank Transfer: ABC Bank, Acc: 1234567890</p>
+            <p style="margin: 5px 0;">💳 M-Pesa: Paybill 400222, Account: 1137985#, Account Name: Dessa Training College</p>
+            <p style="margin: 5px 0;">🏦 Bank Transfer: CooperativeBank, Acc: 01102728878001, Account Name: Dessa Training College</p>
             <p style="margin: 5px 0;">💵 Cash: Visit our campus office</p>
           </div>
           
           <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 0;"><strong>Important:</strong> Please keep your registration number safe. You will need it for all college correspondence and fee payments.</p>
+            <p style="margin: 0;"><strong>Important:</strong> Please keep your registration number safe. You will need it for all college correspondence.</p>
           </div>
           
           <p>If you have any questions, please contact us:</p>
           <ul style="list-style: none; padding: 0;">
             <li>📞 Phone: +254 768 201 415</li>
             <li>📧 Email: dessatrainingcollege@gmail.com</li>
-            <li>📍 Location: [Your Campus Address]</li>
+            <li>📍 Location: Muranga - Kenya</li>
           </ul>
         </div>
         
